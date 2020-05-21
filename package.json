@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -13,7 +13,10 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
+    "@types/node": "^14.0.4",
+    "@types/react": "^16.9.35",
     "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.4.6",
+    "typescript": "^3.9.3"
   }
 }
