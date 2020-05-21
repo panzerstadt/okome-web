@@ -1,0 +1,7 @@
+import "../styles/index.css";
+
+const AppRoot = ({ Component, pageProps }) => {
+  return <Component {...pageProps} />;
+};
+
+export default AppRoot;

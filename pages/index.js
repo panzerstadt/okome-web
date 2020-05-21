@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 export default function Home() {
   return (
@@ -9,11 +9,14 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        <h1 className="p-8 text-gray-100 bg-gray-800 rounded-md title">
+          Welcome to{" "}
+          <a className="hover:bg-red-700" href="https://nextjs.org">
+            Next.js!
+          </a>
         </h1>
 
-        <p className="description">
+        <p className="p-4 mt-10 rounded-lg description hover:bg-blue-300">
           Get started by editing <code>pages/index.js</code>
         </p>
 
@@ -54,11 +57,13 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
 
+      {/* no don't write styled component css for this project */}
+      {/* will delete this soon */}
       <style jsx>{`
         .container {
           min-height: 100vh;
@@ -205,5 +210,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
