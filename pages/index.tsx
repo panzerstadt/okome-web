@@ -1,26 +1,28 @@
 import Layout from "../components/Layout";
-import CarouselSection from "../components/CarouselSection";
-import ImageCard from "../components/Image";
-import Section from "../components/Section";
-import Text from "../components/Text";
+
+import { One } from "../pageComponents/Section1";
+import { Two } from "../pageComponents/Section2";
+import { Three } from "../pageComponents/Section3";
+import { Four } from "../pageComponents/Section4";
+import { Five } from "../pageComponents/Section5";
+import { Six } from "../pageComponents/Section6";
+
+import Client from "shopify-buy";
+
+const client = Client.buildClient({
+  domain: "takumai.myshopify.com/",
+  storefrontAccessToken: "4800632e5ebc937a33a9ea3d6bc158a6",
+});
 
 const Top = () => {
   return (
     <Layout>
-      <CarouselSection>
-        <ImageCard src="/images/carousel/ricehand.jpg" />
-        <ImageCard src="/images/carousel/ricestalk.jpg" />
-        <ImageCard src="/images/carousel/ricebowl.jpg" />
-        <ImageCard src="/images/carousel/ricefield2.jpg" />
-        <ImageCard src="/images/carousel/riceterrace.jpg" />
-        <ImageCard src="/images/carousel/ricefield.jpg" />
-      </CarouselSection>
-
-      <Section>
-        <Text letterform="font-serif">
-          testing testing 1 2 3 らくらく定期便{" "}
-        </Text>
-      </Section>
+      <One />
+      <Two />
+      <Three />
+      <Four client={client} />
+      <Five client={client} />
+      <Six />
     </Layout>
   );
 };

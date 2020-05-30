@@ -2,7 +2,7 @@ import Carousel from "react-multi-carousel";
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 4000, min: 3000 },
+    breakpoint: { max: 4000, min: 1024 },
     items: 1,
   },
   tablet: {
@@ -20,7 +20,21 @@ const responsive = {
 };
 
 const CarouselSection = ({ children }) => {
-  return <Carousel responsive={responsive}>{children}</Carousel>;
+  return (
+    <Carousel
+      arrows={false}
+      autoPlaySpeed={5000}
+      autoPlay
+      infinite
+      keyBoardControl
+      draggable
+      centerMode={false}
+      swipeable
+      responsive={responsive}
+    >
+      {children}
+    </Carousel>
+  );
 };
 
 export default CarouselSection;

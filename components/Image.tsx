@@ -1,9 +1,10 @@
 import React from "react";
+import { SECTION_HEIGHT } from "../constants";
 
 const ImageCard = ({ src, alt = "image" }) => {
   return (
-    <div className="border border-gray-100">
-      <img src={src} alt={alt} />
+    <div className="h-screen">
+      <img className="object-cover w-full h-full" src={src} alt={alt} />
     </div>
   );
 };

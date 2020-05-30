@@ -5,3 +5,18 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;900&display=swap");
+
+.remove-scrollbar {
+  scrollbar-width: none;
+}
+.remove-scrollbar::-webkit-scrollbar {
+  width: 0;
+}
+
+/* https://css-tricks.com/practical-css-scroll-snapping/ */
+.scrollsnap-parent {
+  scroll-snap-type: y mandatory;
+}
+.scrollsnap-child {
+  scroll-snap-align: start;
+}
