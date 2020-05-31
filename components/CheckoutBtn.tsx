@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const CheckoutButton = () => {
   return (
     <div className="fixed bottom-0 right-0">
-      <Link href="payment">
+      <Link href="/checkout">
         <motion.button
           initial={{ width: 0 }}
           animate={{ width: "fit-content" }}
