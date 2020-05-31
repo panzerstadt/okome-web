@@ -39,8 +39,6 @@ export const One = () => {
     !hasScrolled && setHasScrolled(true);
   }, [isScrolling]);
 
-  console.log("hasScrolled", hasScrolled);
-
   return (
     <Section>
       <div
