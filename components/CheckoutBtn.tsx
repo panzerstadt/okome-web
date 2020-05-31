@@ -9,7 +9,7 @@ export const CheckoutButton = () => {
         <motion.button
           initial={{ width: 0 }}
           animate={{ width: "fit-content" }}
-          className="h-20 px-10 mb-10 mr-10 font-serif font-semibold text-black transition-colors duration-300 shadow-lg bg-yellow hover:bg-black hover:text-white"
+          className="h-20 mb-10 mr-10 shadow-lg"
         >
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             go to checkout
