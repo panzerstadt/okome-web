@@ -1,11 +1,17 @@
 import React from "react";
+import { Button } from "@shopify/polaris";
 
-type ContentType = { img: string; text: string };
+type ContentType = { img: string; text: string; productId?: string };
 interface Content {
   content: ContentType;
+  onClick?: (id: string) => void;
 }
 
-export const ItemCard: React.FC<Content> = ({ content }) => {
+export const ItemCard: React.FC<Content> = ({ content, onClick }) => {
+  const handleClick = () => {
+    onClick && onClick(content.productId);
+  };
+
   return (
     <div
       style={{ height: 300, width: 300 }}
@@ -15,6 +21,12 @@ export const ItemCard: React.FC<Content> = ({ content }) => {
         <img src={content.img} />
       </div>
       <h4 className="font-serif">{content.text}</h4>
+      <br />
+      {onClick && (
+        <Button primary onClick={handleClick}>
+          Add to Cart
+        </Button>
+      )}
     </div>
   );
 };
