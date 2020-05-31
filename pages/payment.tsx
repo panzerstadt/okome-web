@@ -35,9 +35,9 @@ export default function App() {
     setConnected(!connected);
   }, [connected]);
 
-  const breadcrumbs = [{ content: "Sample apps" }, { content: "next.js" }];
-  const primaryAction = { content: "New product" };
-  const secondaryActions = [{ content: "Import", icon: ImportMinor }];
+  const breadcrumbs = [{ content: "top page", url: "/" }];
+  // const primaryAction = { content: "New product" };
+  // const secondaryActions = [{ content: "Import", icon: ImportMinor }];
 
   const choiceListItems = [
     { label: "I accept the Terms of Service", value: "false" },
@@ -58,8 +58,8 @@ export default function App() {
     <Page
       title="Subscription"
       breadcrumbs={breadcrumbs}
-      primaryAction={primaryAction}
-      secondaryActions={secondaryActions}
+      // primaryAction={primaryAction}
+      // secondaryActions={secondaryActions}
     >
       <Layout>
         <Layout.AnnotatedSection
@@ -111,6 +111,7 @@ export default function App() {
               />
 
               <ChoiceList
+                title="choices"
                 allowMultiple
                 choices={choiceListItems}
                 selected={checkboxes}
