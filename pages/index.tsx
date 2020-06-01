@@ -7,21 +7,14 @@ import { Four } from "../pageComponents/Section4";
 import { Five } from "../pageComponents/Section5";
 import { Six } from "../pageComponents/Section6";
 
-import Client from "shopify-buy";
-
-const client = Client.buildClient({
-  domain: "takumai.myshopify.com/",
-  storefrontAccessToken: "4800632e5ebc937a33a9ea3d6bc158a6",
-});
-
-const Top = () => {
+const Top = ({ client }) => {
   return (
     <Layout>
       <One />
       <Two />
       <Three />
       <Four client={client} />
-      <Five client={client} />
+      <Five />
       <Six />
     </Layout>
   );

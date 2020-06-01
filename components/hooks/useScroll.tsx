@@ -14,10 +14,7 @@ export const useScroll = (ref?: RefObject<HTMLElement>) => {
     isScrolling: false,
   });
   const handleScroll = (event) => {
-    console.log("handlign scroll");
     clearTimeout(timer);
-
-    console.log(window.scrollY);
 
     setData({
       currentTarget: event.currentTarget,
@@ -31,10 +28,10 @@ export const useScroll = (ref?: RefObject<HTMLElement>) => {
   };
   useEffect(() => {
     if (!ref) {
-      console.log("listening to scroll on window");
+      // console.log("listening to scroll on window");
       window.addEventListener("scroll", handleScroll);
     } else {
-      console.log("listening to scroll on element", ref.current);
+      // console.log("listening to scroll on element", ref.current);
       ref.current.addEventListener("scroll", handleScroll);
     }
 

@@ -1,17 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Section from "../components/Section";
 import { ItemCard } from "../components/ItemCard";
-
-const defaultContent = [
-  {
-    img: "/images/prices/ricebag.jpg",
-    text: "2kg - 2,000yen",
-  },
-  {
-    img: "/images/prices/ricebag.jpg",
-    text: "5kg - 4,500yen",
-  },
-];
+import { CheckoutButton } from "../components/CheckoutBtn";
+import { useInitCheckout } from "../components/hooks/useInitCheckout";
 
 export const Four = ({ client }) => {
   const [products, setProducts] = useState([]);
@@ -20,6 +11,19 @@ export const Four = ({ client }) => {
       setProducts(products);
     });
   }, []);
+
+  const { checkoutId, userAlreadyHasItems } = useInitCheckout(client);
+
+  // once the user selects an item, open a checkout page
+  const [userHasSelectedItem, setUserHasSelectedItem] = useState(false);
+  const handleSelect = (id: string) => {
+    // add checkout item to cart
+    const lineItems = [{ variantId: id, quantity: 1 }];
+
+    client.checkout.addLineItems(checkoutId, lineItems).then((checkout) => {
+      setUserHasSelectedItem(true);
+    });
+  };
 
   return (
     <Section>
@@ -30,15 +34,23 @@ export const Four = ({ client }) => {
             const imgSrc = prod.images[0].src;
             const text = prod.title;
 
-            const content = { img: imgSrc, text: text };
+            const content = {
+              img: imgSrc,
+              text: text,
+              productId: prod.variants[0].id,
+            };
 
-            return <ItemCard content={content} />;
+            return (
+              <ItemCard key={i} content={content} onClick={handleSelect} />
+            );
           })}
         </div>
         <br />
         <p className="font-serif">
           ※一人当たりのお米の消費量は月に約5kgと言われています
         </p>
+
+        {(userHasSelectedItem || userAlreadyHasItems) && <CheckoutButton />}
       </div>
     </Section>
   );

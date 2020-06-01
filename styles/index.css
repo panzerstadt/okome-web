@@ -20,3 +20,11 @@
 .scrollsnap-child {
   scroll-snap-align: start;
 }
+
+button {
+  @apply px-10 py-2 font-serif font-semibold text-black transition-colors duration-300 bg-yellow;
+}
+
+button:hover {
+  @apply bg-black text-yellow;
+}
