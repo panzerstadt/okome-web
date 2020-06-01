@@ -19,10 +19,13 @@ import { ImportMinor } from "@shopify/polaris-icons";
 export default function App() {
   const [subject, setSubject] = useState("");
   const [content, setContent] = useState("");
+  const [inquiryType, setInquiryType] = useState("");
+
   const [connected, setConnected] = useState(false);
 
   const handleSubjectChange = useCallback((value) => setSubject(value), []);
   const handleContentChange = useCallback((value) => setContent(value), []);
+  const handleInquiryType = useCallback((value) => setInquiryType(value), []);
 
   const toggleConnection = useCallback(() => {
     setConnected(!connected);
@@ -52,11 +55,21 @@ export default function App() {
     >
       <Layout>
         <Layout.AnnotatedSection
-          title="Please fill out this form"
+          title="Let us know your inquiries here"
           description="Our support team will be with you shortly."
         >
           <Card sectioned>
             <FormLayout>
+              <ChoiceList
+                title="What are you inquiring about?"
+                choices={[
+                  { label: "Products", value: "products" },
+                  { label: "Prices", value: "prices" },
+                  { label: "Others", value: "others" },
+                ]}
+                selected={inquiryType}
+                onChange={handleInquiryType}
+              />
               <TextField
                 value={subject}
                 label="Email"
