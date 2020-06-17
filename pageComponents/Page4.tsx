@@ -32,12 +32,6 @@ const menu = [
     mass: 5,
     price: 4500,
   },
-  {
-    item: 3,
-    image: "images/prices/ricebag.jpg",
-    mass: 10,
-    price: 9000,
-  },
 ];
 
 export const Page4 = () => {
