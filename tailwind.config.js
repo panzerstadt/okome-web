@@ -12,9 +12,13 @@ module.exports = {
         yellow: "#FFE66D",
         lightBlue: "#6CA6C1",
         darkBlue: "#2A2D43",
+        cyan: "#C2FFFF",
       },
       fontSize: {
         "7xl": "6rem",
+      },
+      spacing: {
+        "128": "32rem",
       },
     },
   },
