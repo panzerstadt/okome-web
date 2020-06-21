@@ -23,6 +23,7 @@ import { Cart } from "../components/forms/Cart";
 import { sumCheckoutItems } from "../components/forms/Cart/utils";
 
 const Checkout = ({ client }) => {
+  const [checkoutURL, setCheckoutURL] = useState("");
   const [checkoutId, setCheckoutId] = useState("");
   const [totalAmount, setTotalAmount] = useState<number>(0);
   const [currency, setCurrency] = useState("");
@@ -62,15 +63,16 @@ const Checkout = ({ client }) => {
           onResult={handleCheckoutItems}
           onCurrency={setCurrency}
           onCheckoutId={setCheckoutId}
+          onCheckoutURL={setCheckoutURL}
         />
         <Address client={client} checkoutId={checkoutId} />
 
-        <Layout.AnnotatedSection
+        {/* <Layout.AnnotatedSection
           title="Payment Details"
           description="please enter your payment details for month subscription."
         >
           <Card sectioned>payment detail section here</Card>
-        </Layout.AnnotatedSection>
+        </Layout.AnnotatedSection> */}
 
         <Layout.AnnotatedSection
           title="Confirm Subscription"
@@ -79,17 +81,19 @@ const Checkout = ({ client }) => {
           <Card sectioned>
             <FormLayout>
               <ChoiceList
-                title={`By clicking on the "Confirm" button, you agree to be charged a
-              monthly amount of ${totalAmount} ${currency}`}
+                title={`By clicking on the "Confirm" button, you will be sent to a shopify payments page for a monthly subscription of ${totalAmount} ${currency}`}
                 allowMultiple
                 choices={choiceListItems}
                 selected={checkboxes}
                 onChange={handleCheckboxesChange}
               />
-
-              <Button primary onClick={() => handleConfirmSubscription()}>
-                Confirm
-              </Button>
+              <div className="flex">
+                <div className="px-6 py-4 bg-black rounded-lg text">
+                  <a className="font-semibold text-gray-100" href={checkoutURL}>
+                    Confirm and Pay
+                  </a>
+                </div>
+              </div>
             </FormLayout>
           </Card>
         </Layout.AnnotatedSection>

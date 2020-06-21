@@ -15,6 +15,7 @@ interface Cart {
   onTotal?: (number) => void;
   onCurrency?: (string) => void;
   onCheckoutId?: (string) => void;
+  onCheckoutURL?: (string) => void;
 }
 
 export const Cart: React.FC<Cart> = ({
@@ -23,6 +24,7 @@ export const Cart: React.FC<Cart> = ({
   onTotal,
   onCurrency,
   onCheckoutId,
+  onCheckoutURL,
 }) => {
   const handleLineItemUpdate = (lineItems) => {
     setItemsInCart(lineItems);
@@ -44,8 +46,8 @@ export const Cart: React.FC<Cart> = ({
   useEffect(() => {
     if (checkoutId) {
       onCheckoutId && onCheckoutId(checkoutId);
-      console.log("fetching with id", checkoutId);
       client.checkout.fetch(checkoutId).then((checkout) => {
+        onCheckoutURL(checkout.webUrl);
         handleLineItemUpdate(checkout.lineItems);
       });
     }

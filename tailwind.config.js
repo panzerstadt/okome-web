@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Arial", "Helvetica", "sans-serif"],
-      serif: ["Noto Serif JP", "monospace"], // FIXME: replace monosapce with "serif" when prod
+      serif: ["APJap", "serif"],
     },
     extend: {
       colors: {
@@ -12,12 +12,14 @@ module.exports = {
         yellow: "#FFE66D",
         lightBlue: "#6CA6C1",
         darkBlue: "#2A2D43",
-        cyan: "#C2FFFF",
+        cyan: "#C5FEFF",
       },
       fontSize: {
         "7xl": "6rem",
+        title: "8rem",
       },
       spacing: {
+        "84": "24rem",
         "128": "32rem",
       },
     },

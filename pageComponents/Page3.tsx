@@ -2,8 +2,8 @@ import React from "react";
 
 export const Page3 = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full bg-blue-300">
-      <h1 className="p-16 text-6xl">お米くんの正体</h1>
+    <div className="flex flex-col items-center justify-center w-full bg-cyan">
+      <h1 className="p-16 sm:p-20">お米くんの正体</h1>
       <div className="grid grid-cols-3 ">
         <img src="images/home/rice.jpg" className="" />
         <img src="images/home/rice_2.jpg" className="" />

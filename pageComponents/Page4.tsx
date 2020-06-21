@@ -1,52 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { MenuItems } from "../components/MenuItems";
+import { useInitCheckout } from "../components/hooks/useInitCheckout";
+import { CheckoutButton } from "../components/CheckoutBtn";
 
-const menu = [
-  {
-    item: 1,
-    image: "images/prices/ricebag.jpg",
-    mass: 2,
-    price: 2000,
-  },
-  {
-    item: 2,
-    image: "images/prices/ricebag.jpg",
-    mass: 5,
-    price: 4500,
-  },
-  {
-    item: 3,
-    image: "images/prices/ricebag.jpg",
-    mass: 10,
-    price: 9000,
-  },
-  {
-    item: 1,
-    image: "images/prices/ricebag.jpg",
-    mass: 2,
-    price: 2000,
-  },
-  {
-    item: 2,
-    image: "images/prices/ricebag.jpg",
-    mass: 5,
-    price: 4500,
-  },
-];
+export const Page4 = ({ client }) => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    client.product.fetchAll().then((products) => {
+      setProducts(products);
+    });
+  }, []);
 
-export const Page4 = () => {
+  const { checkoutId, userAlreadyHasItems } = useInitCheckout(client);
+
+  // once the user selects an item, open a checkout page
+  const [userHasSelectedItem, setUserHasSelectedItem] = useState(false);
+  const handleSelect = (id: string) => {
+    // add checkout item to cart
+    const lineItems = [{ variantId: id, quantity: 1 }];
+
+    client.checkout.addLineItems(checkoutId, lineItems).then((checkout) => {
+      setUserHasSelectedItem(true);
+    });
+  };
+
   return (
-    <div className="flex flex-col items-center min-h-screen bg-blue-300">
-      <h1 className="p-16 text-6xl">Menu</h1>
+    <div className="flex flex-col items-center bg-cyan">
+      <h1 className="p-16">Menu</h1>
       <div className="grid grid-cols-3 gap-4 my-8">
-        {menu.map((x) => (
-          <MenuItems
-            item={x.item}
-            image={x.image}
-            mass={x.mass}
-            price={x.price}
-          />
-        ))}
+        {products.map((prod, i) => {
+          const imgSrc = prod.images[0].src;
+          const text = prod.title;
+          const product = prod.variants[0];
+
+          const content = {
+            key: i,
+            img: imgSrc,
+            text: text,
+            productId: prod.variants[0].id,
+            price: product.price,
+          };
+
+          return <MenuItems content={content} onClick={handleSelect} />;
+        })}
+        {(userHasSelectedItem || userAlreadyHasItems) && <CheckoutButton />}
       </div>
     </div>
   );

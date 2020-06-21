@@ -9,7 +9,7 @@ export const CheckoutButton = () => {
         <motion.button
           initial={{ width: 0 }}
           animate={{ width: "fit-content" }}
-          className="h-20 mb-10 mr-10 shadow-lg"
+          className="h-20 mb-10 mr-10 text-4xl shadow-lg"
         >
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             go to checkout

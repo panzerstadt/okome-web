@@ -2,8 +2,8 @@ import React from "react";
 
 export const Page7 = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-blue-300">
-      <h1 className="p-16 text-6xl">お問い合わせ</h1>
+    <div className="flex flex-col items-center justify-center h-screen bg-cyan">
+      <h1 className="p-16">お問い合わせ</h1>
       <p className="w-4/5 p-16 text-4xl leading-normal">
         当社へのお問い合せは、下記お問い合せフォームにてお寄せください。
         後日、担当者よりご連絡させていただきます。

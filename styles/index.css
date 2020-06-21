@@ -4,6 +4,15 @@
 
 @tailwind utilities;
 
+@font-face {
+  font-family: "APJap";
+  src: url("./fonts/APJapanesefont.woff2") format("woff2"),
+    url("./fonts/APJapanesefont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;900&display=swap");
 
 .remove-scrollbar {
@@ -27,4 +36,15 @@ button {
 
 button:hover {
   @apply bg-black text-yellow;
+}
+
+h1 {
+  @apply text-7xl;
+}
+
+/* Small (sm) */
+@media (min-width: 640px) {
+  h1 {
+    @apply text-title;
+  }
 }

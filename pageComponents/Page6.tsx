@@ -9,11 +9,11 @@ const insta = [
 
 export const Page6 = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-blue-300">
-      <h1 className="p-16 text-6xl">INSTAGRAM</h1>
+    <div className="flex flex-col items-center justify-center h-screen bg-cyan">
+      <h1 className="p-16">INSTAGRAM</h1>
       <div className="flex flex-row items-center justify-around ">
         {insta.map((x) => (
-          <TripleTile image={x.image} description="" />
+          <TripleTile image={x.image} description="" size="mid" />
         ))}
       </div>
       <p className="w-4/5 p-16 text-4xl leading-normal">

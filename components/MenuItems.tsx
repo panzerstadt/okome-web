@@ -1,13 +1,18 @@
 import React from "react";
 
-export const MenuItems = ({ item, image, mass, price }) => {
+export const MenuItems = ({ content, onClick }) => {
   return (
-    <div key={item} className="flex flex-col items-center justify-center m-4">
-      <img src={image} className="m-4" />
-      <p className="p-8 text-4xl">
-        {mass}kg {price}円
+    <div
+      key={content.key}
+      className="flex flex-col items-center justify-center m-4"
+    >
+      <img src={content.img} className="m-4" />
+      <p className="p-8 text-5xl">
+        {content.text} {content.price}円
       </p>
-      <button>注文する</button>
+      <button className="text-4xl" onClick={() => onClick(content.productId)}>
+        注文する
+      </button>
     </div>
   );
 };

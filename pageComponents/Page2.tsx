@@ -2,9 +2,9 @@ import React from "react";
 
 export const Page2 = () => {
   return (
-    <div className="h-screen bg-blue-300">
+    <div className="h-screen bg-cyan">
       <div className="flex flex-col items-center justify-center h-full">
-        <h1 className="text-6xl">Japanese Text</h1>
+        <h1 className="pb-10">宅米便とは…</h1>
         <div className="flex flex-row items-center">
           <img src="/images/home/okomekun.png" className="h-128" />
         </div>
