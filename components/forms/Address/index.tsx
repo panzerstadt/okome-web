@@ -30,13 +30,21 @@ interface AddressObj {
   postcode: string;
 }
 
+const defaultAddress = {
+  addressLine1: "",
+  addressLine2: "",
+  city: "",
+  state: "",
+  postcode: "",
+};
+
 export const Address = ({ client, checkoutId }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNum, setPhoneNum] = useState("");
   const [country, setCountry] = useState<Countries[]>([]);
-  const [addressObj, setAddressObj] = useState<AddressObj>({});
+  const [addressObj, setAddressObj] = useState<AddressObj>(defaultAddress);
   const [popoverActive, setPopoverActive] = useState(false);
 
   const handleFirstNameChange = useCallback((value) => setFirstName(value), []);

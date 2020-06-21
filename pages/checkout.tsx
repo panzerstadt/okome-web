@@ -1,22 +1,14 @@
 // https://github.com/Shopify/polaris-react
 
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import {
   Layout,
   Page,
   FooterHelp,
   Card,
   Link,
-  Button,
   FormLayout,
-  TextField,
-  AccountConnection,
   ChoiceList,
-  DisplayText,
-  OptionList,
-  Thumbnail,
-  ButtonGroup,
-  SettingToggle,
 } from "@shopify/polaris";
 import { Address } from "../components/forms/Address";
 import { Cart } from "../components/forms/Cart";
@@ -45,10 +37,6 @@ const Checkout = ({ client }) => {
     { label: "I accept the Terms of Service", value: "false" },
     { label: "I consent to receiving emails", value: "false2" },
   ];
-
-  const handleConfirmSubscription = () => {
-    alert("yay!");
-  };
 
   return (
     <Page

@@ -41,7 +41,7 @@ export const Page4 = ({ client }) => {
             price: product.price,
           };
 
-          return <MenuItems content={content} onClick={handleSelect} />;
+          return <MenuItems key={i} content={content} onClick={handleSelect} />;
         })}
         {(userHasSelectedItem || userAlreadyHasItems) && <CheckoutButton />}
       </div>

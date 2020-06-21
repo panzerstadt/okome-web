@@ -12,8 +12,8 @@ export const Page5 = () => {
     <div className="flex flex-col items-center justify-center h-screen bg-cyan">
       <h1 className="p-16 sm:p-24">定期便は良いことづくし</h1>
       <div className="flex flex-row items-center justify-around">
-        {processes.map((x) => (
-          <TripleTile image={x.image} description={x.description} />
+        {processes.map((x, i) => (
+          <TripleTile key={i} image={x.image} description={x.description} />
         ))}
       </div>
     </div>
