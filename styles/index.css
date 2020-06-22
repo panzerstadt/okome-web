@@ -13,8 +13,6 @@
   font-display: swap;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;900&display=swap");
-
 .remove-scrollbar {
   scrollbar-width: none;
 }
@@ -31,7 +29,7 @@
 }
 
 button {
-  @apply px-10 py-2 font-serif font-semibold text-black transition-colors duration-300 bg-yellow;
+  @apply px-10 py-8 font-serif text-6xl text-black transition-colors duration-300 bg-yellow;
 }
 
 button:hover {
@@ -46,5 +44,16 @@ h1 {
 @media (min-width: 640px) {
   h1 {
     @apply text-title;
+  }
+}
+
+h3 {
+  @apply text-4xl leading-normal;
+}
+
+/* Small (sm) */
+@media (min-width: 640px) {
+  h3 {
+    @apply text-6xl;
   }
 }

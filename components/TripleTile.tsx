@@ -10,7 +10,9 @@ export const TripleTile = ({ image, description, size = SIZES.small }) => {
   return (
     <div className="flex flex-col items-center justify-center p-4 m-4">
       <img src={image} className={size} />
-      {description ? <p className="p-8 text-4xl">{description}</p> : null}
+      {description ? (
+        <h3 className="p-8 leading-tight">{description}</h3>
+      ) : null}
     </div>
   );
 };

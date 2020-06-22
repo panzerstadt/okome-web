@@ -10,9 +10,7 @@ export const MenuItems = ({ content, onClick }) => {
       <p className="p-8 text-5xl">
         {content.text} {content.price}円
       </p>
-      <button className="text-4xl" onClick={() => onClick(content.productId)}>
-        注文する
-      </button>
+      <button onClick={() => onClick(content.productId)}>注文する</button>
     </div>
   );
 };

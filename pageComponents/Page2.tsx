@@ -8,10 +8,10 @@ export const Page2 = () => {
         <div className="flex flex-row items-center">
           <img src="/images/home/okomekun.png" className="h-128" />
         </div>
-        <p className="p-6 text-4xl">
+        <h3 className="px-10 py-10">
           宅米便は 「お米くん」 が営むお米の宅配サービスです。
-        </p>
-        <p className="p-6 text-4xl">美味しいお米を毎月お家にお届けします。</p>
+        </h3>
+        <h3 className="p-6">美味しいお米を毎月お家にお届けします。</h3>
       </div>
     </div>
   );
