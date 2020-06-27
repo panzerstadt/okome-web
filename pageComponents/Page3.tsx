@@ -1,13 +1,20 @@
 import React from "react";
+import { TripleTile } from "../components/TripleTile";
+
+const home = [
+  { image: "/images/home/rice_1.jpg" },
+  { image: "/images/home/rice_2.jpg" },
+  { image: "/images/home/rice_3.jpg" },
+];
 
 export const Page3 = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full bg-cyan">
       <h1 className="p-16 sm:p-20">お米くんの正体</h1>
-      <div className="grid grid-cols-3 ">
-        <img src="images/home/rice.jpg" className="" />
-        <img src="images/home/rice_2.jpg" className="" />
-        <img src="images/home/rice_3.jpg" className="" />
+      <div className="flex flex-col items-center justify-around sm:flex-row ">
+        {home.map((x, i) => (
+          <TripleTile key={i} image={x.image} description="" size="mid" />
+        ))}
       </div>
       <h3 className="w-4/5 p-16">
         江戸時代に「日本三大米」と称された讃岐こしひかり。

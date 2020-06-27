@@ -6,6 +6,8 @@ const SIZES = {
   large: "h-128 w-128",
 };
 
+// size = SIZES.small
+
 export const TripleTile = ({ image, description, size = SIZES.small }) => {
   return (
     <div className="flex flex-col items-center justify-center p-4 m-4">

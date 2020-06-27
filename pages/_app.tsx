@@ -14,7 +14,7 @@ const client = Client.buildClient({
 const AppRoot = ({ Component, pageProps }) => {
   return (
     <AppProvider i18n={enTranslations}>
-      <Component {...pageProps} client={client} />;
+      <Component {...pageProps} client={client} />
     </AppProvider>
   );
 };
