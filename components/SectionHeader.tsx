@@ -13,8 +13,8 @@ const SectionHeader = ({ title }) => {
   return (
     <div>
       <motion.h1
-        ref={ref}
         className="p-12 leading-normal text-center sm:p-16"
+        ref={ref}
         variants={variants}
         initial={"hidden"}
         animate={entry.intersectionRatio > 0 ? "visible" : "hidden"}
