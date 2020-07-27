@@ -14,7 +14,7 @@ export const Page2 = () => {
       <div className="flex flex-col items-center justify-center h-full">
         <motion.h1
           ref={ref}
-          className="pb-10"
+          className="p-12 leading-normal text-center sm:p-16"
           variants={variants}
           initial={"hidden"}
           animate={entry.intersectionRatio > 0 ? "visible" : "hidden"}

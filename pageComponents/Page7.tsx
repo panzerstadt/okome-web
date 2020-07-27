@@ -1,9 +1,10 @@
 import React from "react";
+import SectionHeader from "../components/SectionHeader";
 
 export const Page7 = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-cyan">
-      <h1 className="p-16">お問い合わせ</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-cyan">
+      <SectionHeader title="お問い合わせ" />
       <h3 className="w-4/5 p-16">
         当社へのお問い合せは、下記お問い合せフォームにてお寄せください。
         後日、担当者よりご連絡させていただきます。

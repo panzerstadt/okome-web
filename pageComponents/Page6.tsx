@@ -1,5 +1,6 @@
 import React from "react";
 import { TripleTile } from "../components/TripleTile";
+import SectionHeader from "../components/SectionHeader";
 
 const insta = [
   { image: "/images/insta/field1.png" },
@@ -10,7 +11,7 @@ const insta = [
 export const Page6 = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-cyan">
-      <h1 className="p-16">INSTAGRAM</h1>
+      <SectionHeader title="INSTAGRAM" />
       <div className="flex flex-col items-center justify-around sm:flex-row ">
         {insta.map((x, i) => (
           <TripleTile key={i} image={x.image} description="" size="mid" />
