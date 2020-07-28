@@ -1,8 +1,7 @@
 import React from "react";
-import { TripleTile } from "../components/TripleTile";
-import SectionHeader from "../components/SectionHeader";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../components/hooks/useIntersectionObserver";
+import PopOut from "../components/PopOut";
 
 const processes = [
   { image: "/images/process/sale.svg", description: "お得な割引" },
@@ -10,7 +9,7 @@ const processes = [
   { image: "/images/process/skip.svg", description: "スキップも可能" },
 ];
 
-const Process = () => {
+const Process = ({ image, description }) => {
   const [ref, entry] = useIntersectionObserver({});
 
   const variants = {
@@ -26,18 +25,18 @@ const Process = () => {
           initial={"initial"}
           animate={entry.intersectionRatio > 0 ? "animate" : null}
           variants={variants}
-          transition={{ ease: "linear", duration: 0.5 }}
-          src={processes[0].image}
+          transition={{ ease: "linear", duration: 0.5, delay: "0.2" }}
+          src={image}
           className="w-64 h-64"
         />
         <motion.h3
           initial={{ y: 50, opacity: 0 }}
           animate={entry.intersectionRatio > 0 ? "animate" : null}
           variants={variants}
-          transition={{ ease: "linear", duration: 0.5, delay: "0.2" }}
+          transition={{ ease: "linear", duration: 0.5, delay: "0.4" }}
           className="p-8 leading-tight"
         >
-          {processes[0].description}
+          {description}
         </motion.h3>
       </div>
     </div>
@@ -47,11 +46,14 @@ const Process = () => {
 export const Page5 = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-cyan">
-      <SectionHeader title="定期便は良いことづくし" />
-      <Process />
+      <PopOut>
+        <h1 className="p-12 leading-normal text-center sm:p-16">
+          定期便は良いことづくし
+        </h1>
+      </PopOut>
       <div className="flex flex-col items-center justify-around sm:flex-row">
         {processes.map((x, i) => (
-          <TripleTile key={i} image={x.image} description={x.description} />
+          <Process key={i} image={x.image} description={x.description} />
         ))}
       </div>
     </div>

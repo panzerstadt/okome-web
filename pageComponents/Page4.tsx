@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MenuItems } from "../components/MenuItems";
 import { useInitCheckout } from "../components/hooks/useInitCheckout";
 import { CheckoutButton } from "../components/CheckoutBtn";
-import SectionHeader from "../components/SectionHeader";
+import PopOut from "../components/PopOut";
 
 export const Page4 = ({ client }) => {
   const [products, setProducts] = useState([]);
@@ -27,7 +27,9 @@ export const Page4 = ({ client }) => {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-cyan">
-      <SectionHeader title="Menu" />
+      <PopOut>
+        <h1 className="p-12 leading-normal text-center sm:p-16">Menu</h1>
+      </PopOut>
       <div className="grid grid-cols-3 gap-4 my-8">
         {products.map((prod, i) => {
           const imgSrc = prod.images[0].src;

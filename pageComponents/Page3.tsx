@@ -1,6 +1,6 @@
 import React from "react";
 import { TripleTile } from "../components/TripleTile";
-import SectionHeader from "../components/SectionHeader";
+import PopOut from "../components/PopOut";
 
 const home = [
   { image: "/images/home/rice_1.jpg" },
@@ -11,7 +11,11 @@ const home = [
 export const Page3 = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full bg-cyan">
-      <SectionHeader title="お米くんの正体" />
+      <PopOut>
+        <h1 className="p-12 leading-normal text-center sm:p-16">
+          お米くんの正体
+        </h1>
+      </PopOut>
       <div className="flex flex-col items-center justify-around sm:flex-row ">
         {home.map((x, i) => (
           <TripleTile key={i} image={x.image} description="" size="mid" />
