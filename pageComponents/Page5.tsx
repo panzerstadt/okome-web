@@ -30,7 +30,7 @@ const Process = ({ image, description }) => {
           className="w-64 h-64"
         />
         <motion.h3
-          initial={{ y: 50, opacity: 0 }}
+          initial={"initial"}
           animate={entry.intersectionRatio > 0 ? "animate" : null}
           variants={variants}
           transition={{ ease: "linear", duration: 0.5, delay: "0.4" }}

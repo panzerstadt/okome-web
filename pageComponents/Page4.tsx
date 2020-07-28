@@ -30,7 +30,7 @@ export const Page4 = ({ client }) => {
       <PopOut>
         <h1 className="p-12 leading-normal text-center sm:p-16">Menu</h1>
       </PopOut>
-      <div className="grid grid-cols-3 gap-4 my-8">
+      <div className="flex flex-col items-center justify-center grid-cols-3 gap-4 p-4 my-8 sm:grid">
         {products.map((prod, i) => {
           const imgSrc = prod.images[0].src;
           const text = prod.title;
