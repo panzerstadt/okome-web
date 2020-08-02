@@ -3,13 +3,13 @@ import "@shopify/polaris/styles.css";
 import "../styles/index.css";
 import { AppProvider } from "@shopify/polaris";
 import enTranslations from "@shopify/polaris/locales/en.json";
+import { Client } from "../components/Square/SquareAPI";
 
-import Client from "shopify-buy";
+const APP_ID = "sandbox-sq0idb-CxiAbISCJ5tIa1QM97uzKw";
+const ACCESS_TOKEN =
+  "EAAAEKWMsagfxuR6l6ImNcBq0e0xtaGOTOcbrmYvY0520DvzEk3YuJ2js0Zov7a4";
 
-const client = Client.buildClient({
-  domain: "takumai.myshopify.com/",
-  storefrontAccessToken: "4800632e5ebc937a33a9ea3d6bc158a6",
-});
+const client = new Client({ access_token: ACCESS_TOKEN });
 
 const AppRoot = ({ Component, pageProps }) => {
   return (

@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { MenuItems } from "../components/MenuItems";
-import { useInitCheckout } from "../components/hooks/useInitCheckout";
+import { useInitCheckout } from "../components/hooks/useShopifyInitCheckout";
 import { CheckoutButton } from "../components/CheckoutBtn";
 import PopOut from "../components/PopOut";
+import { useProductCatalog } from "../components/Square/useProductCatalog";
 
 export const Page4 = ({ client }) => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    client.product.fetchAll().then((products) => {
-      setProducts(products);
-    });
-  }, []);
+  const [products, updateProducts] = useProductCatalog();
 
-  const { checkoutId, userAlreadyHasItems } = useInitCheckout(client);
+  // const { checkoutId, userAlreadyHasItems } = useInitCheckout(client);
 
   // once the user selects an item, open a checkout page
   const [userHasSelectedItem, setUserHasSelectedItem] = useState(false);
@@ -20,9 +16,9 @@ export const Page4 = ({ client }) => {
     // add checkout item to cart
     const lineItems = [{ variantId: id, quantity: 1 }];
 
-    client.checkout.addLineItems(checkoutId, lineItems).then((checkout) => {
-      setUserHasSelectedItem(true);
-    });
+    // client.checkout.addLineItems(checkoutId, lineItems).then((checkout) => {
+    //   setUserHasSelectedItem(true);
+    // });
   };
 
   return (
@@ -32,21 +28,20 @@ export const Page4 = ({ client }) => {
       </PopOut>
       <div className="flex flex-col items-center justify-center grid-cols-3 gap-4 p-4 my-8 sm:grid">
         {products.map((prod, i) => {
-          const imgSrc = prod.images[0].src;
-          const text = prod.title;
-          const product = prod.variants[0];
+          const imgSrc = prod.image;
+          const text = prod.name;
 
           const content = {
             key: i,
             img: imgSrc,
             text: text,
-            productId: prod.variants[0].id,
-            price: product.price,
+            productId: prod.id,
+            price: prod.price,
           };
 
           return <MenuItems key={i} content={content} onClick={handleSelect} />;
         })}
-        {(userHasSelectedItem || userAlreadyHasItems) && <CheckoutButton />}
+        {/* {(userHasSelectedItem || userAlreadyHasItems) && <CheckoutButton />} */}
       </div>
     </div>
   );
