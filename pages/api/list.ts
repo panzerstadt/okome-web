@@ -1,6 +1,5 @@
 import { Client } from "../../components/Square/SquareAPI";
 
-const APP_ID = "sandbox-sq0idb-CxiAbISCJ5tIa1QM97uzKw";
 const ACCESS_TOKEN =
   "EAAAEKWMsagfxuR6l6ImNcBq0e0xtaGOTOcbrmYvY0520DvzEk3YuJ2js0Zov7a4";
 

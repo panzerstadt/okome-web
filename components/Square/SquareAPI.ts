@@ -54,6 +54,31 @@ export class Client {
       .then((result) => this.formatRawProductData(result.data.objects));
   }
 
+  locations() {
+    return axios
+      .get(this.base_url + "locations")
+      .then((result) => result.data.locations);
+  }
+
+  checkout(locationId) {
+    return axios.get(this.base_url + "locations/" + locationId + "/checkouts");
+  }
+
+  createCheckoutURL() {
+    return this.locations().then((locationResult) => {
+      console.log("locations!!", locationResult);
+      const locationId = locationResult[0].id; // dunno why we would have multiple locations?
+      return this.checkout(locationId).then((result) => {
+        console.log("my result!", result);
+        return result;
+      });
+    });
+  }
+
+  cartInit() {
+    "https://developer.squareup.com/reference/square/orders-api";
+  }
+
   see() {
     console.log("access token!", this.access_token);
   }
