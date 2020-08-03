@@ -6,7 +6,7 @@ import {
   Button,
   FormLayout,
 } from "@shopify/polaris";
-import { useInitCheckout } from "../../hooks/useInitCheckout";
+import { useInitCheckout } from "../../hooks/useShopifyInitCheckout";
 import { sumCheckoutItems } from "./utils";
 
 interface Cart {

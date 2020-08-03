@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Section from "../components/Section";
 import { ItemCard } from "../components/ItemCard";
 import { CheckoutButton } from "../components/CheckoutBtn";
-import { useInitCheckout } from "../components/hooks/useInitCheckout";
+import { useInitCheckout } from "../components/hooks/useShopifyInitCheckout";
 
 export const Four = ({ client }) => {
   const [products, setProducts] = useState([]);

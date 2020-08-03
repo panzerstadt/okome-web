@@ -25,7 +25,7 @@ const Process = ({ image, description }) => {
           initial={"initial"}
           animate={entry.intersectionRatio > 0 ? "animate" : null}
           variants={variants}
-          transition={{ ease: "linear", duration: 0.5, delay: "0.2" }}
+          transition={{ ease: "linear", duration: 0.5, delay: "0.2" } as any}
           src={image}
           className="w-64 h-64"
         />
@@ -33,7 +33,7 @@ const Process = ({ image, description }) => {
           initial={"initial"}
           animate={entry.intersectionRatio > 0 ? "animate" : null}
           variants={variants}
-          transition={{ ease: "linear", duration: 0.5, delay: "0.4" }}
+          transition={{ ease: "linear", duration: 0.5, delay: "0.4" } as any}
           className="p-8 leading-tight"
         >
           {description}

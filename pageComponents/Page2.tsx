@@ -10,7 +10,7 @@ export const Page2 = () => {
             宅米便とは…
           </h1>
         </PopOut>
-        <PopOut delay="0.2">
+        <PopOut delay={0.2}>
           <div className="flex flex-row items-center">
             <img src="/images/home/okomekun.png" className="h-128" />
             <h3>ごはんどーぞ♪</h3>
